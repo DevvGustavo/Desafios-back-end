@@ -14,7 +14,7 @@ public class TokenUser {
     private String sequencia;
     private List<Character> listaDeNumeros;
 
-    protected void funcionalidadesDoToken(){
+    public final StringBuilder geracaoDoToken(){
         numeroAleatorio = new Random();
         token = numeroAleatorio.nextInt(301);
 
@@ -29,14 +29,15 @@ public class TokenUser {
         //Embaralha os números
         Collections.shuffle(listaDeNumeros);
 
-        // Converter a lista embaralhada de volta para uma String
+        // Converter a lista embaralhada para uma String
         StringBuilder tokenConvertido = new StringBuilder();
 
         for (char c : listaDeNumeros) {
 
             tokenConvertido.append(c);
         }
-    }
 
+        return tokenConvertido;
+    }
 
 }
