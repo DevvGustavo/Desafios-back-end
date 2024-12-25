@@ -1,4 +1,4 @@
-package org.example;
+package org.example.LogicaDoSistema;
 
 import java.util.Scanner;
 
@@ -6,15 +6,17 @@ public class Menu {
 
     Scanner sc = new Scanner(System.in);
 
-    private void linha(){
+    protected void linha(){
         System.out.println("---------------------------------------------------------");
     }
 
-    private int UserResponse(){
+    protected int userResponse(){
 
-        int respota = sc.nextInt();
+        int respota;
+        respota = sc.nextInt();
+        sc.nextLine();
+
         return respota;
-
     }
 
     public void menuDeLogin() {
@@ -23,7 +25,6 @@ public class Menu {
         System.out.println("Quem está querendo fazer loguin?\n" +
                 "1- Administrador\n" +
                 "2- Vendedor");
-
-        UserResponse();
+        linha();
     }
 }
